@@ -44,3 +44,11 @@ SELECT r.rentalIdx
   right outer join memberTBL as m
 	on r.memberIdx = m.memberIdx
 	where r.rentalIdx is null;
+
+-- 우리 책대여점에 없는 소설 장르
+select	c.cateIdx
+		,c.cateName
+		,b.bookName
+	from categoryTBL as c
+	left outer join booksTBL as b
+		 on c.cateIdx=b.cateIdx;
