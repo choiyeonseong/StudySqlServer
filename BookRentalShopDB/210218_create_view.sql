@@ -1,4 +1,4 @@
-create or alter view uv_notrentalMember
+ï»¿create or alter view uv_notrentalMember
 as
 	select r.rentalIdx
       --,r.memberIdx
@@ -8,9 +8,9 @@ as
       --,r.bookIdx
 	  ,b.bookName
 	  ,b.author
-      ,format(r.rentalDt, 'yyyy-MM-dd') as ´ë¿©ÀÏ
-      ,format(r.returnDt, 'yyyy-MM-dd') as ¹İ³³ÀÏ
-      ,dbo.ufn_getState(r.rentalState) as '´ë¿©»óÅÂ'
+      ,format(r.rentalDt, 'yyyy-MM-dd') as ëŒ€ì—¬ì¼
+      ,format(r.returnDt, 'yyyy-MM-dd') as ë°˜ë‚©ì¼
+      ,dbo.ufn_getState(r.rentalState) as 'ëŒ€ì—¬ìƒíƒœ'
   from rentalTBL as r
 
  right outer join memberTBL as m
