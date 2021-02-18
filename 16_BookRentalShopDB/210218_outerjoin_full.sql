@@ -86,3 +86,4 @@ rollback;
 commit;
 
 delete from categoryTBL where cateIdx = 'I0003';
+delete from categoryTBL where cateIdx in ('I0001','I0002');
