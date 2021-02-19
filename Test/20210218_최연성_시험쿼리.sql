@@ -35,7 +35,7 @@ select	idx										as Idx
   order by idx desc;
 
 -- 3-1
-select	top(10)
+select	-- top(10)
 		b.idx			as 번호
 		,b.Division		as 장르번호
 		,d.Names		as 장르
@@ -54,7 +54,7 @@ select	m.Names
 	from membertbl as m
   left outer join rentaltbl as r
 	on m.Idx = r.memberIdx
-  where rentalDate is null;
+  where r.Idx is null; -- r.rentalDate보다 r.Idx(키)가 더 확실한 방법
 
 -- 4-1
 insert into divtbl values('I002','자기개발서');
@@ -79,5 +79,5 @@ select	d.Names			as names
 	from bookstbl as b
   inner join divtbl as d
 	on b.Division = d.Division
-  group by d.Names
+  group by d.Names	-- group by rollup(d.Names)
   with rollup;
